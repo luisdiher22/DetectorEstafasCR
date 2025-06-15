@@ -1,6 +1,13 @@
+using Microsoft.EntityFrameworkCore;
+using DetectorEstafaCR.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+// Add ApplicationDbContext
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlite("Data Source=scamdetector.db"));
+
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
@@ -23,5 +30,5 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-// SQL route
+// SQL routes
 app.Run();
