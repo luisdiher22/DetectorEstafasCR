@@ -1,0 +1,69 @@
+@model DetectorEstafaCR.Models.DetectResultViewModel
+@{
+    ViewData["Title"] = "Resultado del Análisis";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<div>
+    <h4>Detalles del Envío:</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-3">Número/Correo Analizado:</dt>
+        <dd class="col-sm-9">@(Model.OriginalContactInfo ?? "No proporcionado")</dd>
+
+        <dt class="col-sm-3">Mensaje Analizado:</dt>
+        <dd class="col-sm-9">
+            <pre style="white-space: pre-wrap; word-break: break-all;">@(Model.OriginalMessage ?? "No proporcionado")</pre>
+        </dd>
+    </dl>
+</div>
+
+<div>
+    <h4>Resultado del Análisis:</h4>
+    <hr />
+    @if (Model.IsPotentialScam)
+    {
+        <div class="alert alert-danger" role="alert">
+            <strong>Potencial Estafa Detectada</strong>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-success" role="alert">
+            <strong>No se considera estafa (según análisis actual)</strong>
+        </div>
+    }
+
+    <h5>Detalles:</h5>
+    @if (Model.AnalysisDetails != null && Model.AnalysisDetails.Any())
+    {
+        <ul>
+            @foreach (var detail in Model.AnalysisDetails)
+            {
+                <li>@detail</li>
+            }
+        </ul>
+    }
+    else
+    {
+        <p>No hay detalles adicionales.</p>
+    }
+
+    @if (Model.ReportCount > 0 && !string.IsNullOrWhiteSpace(Model.OriginalContactInfo))
+    {
+        <p>El contacto <strong>@Model.OriginalContactInfo</strong> ha sido reportado <strong>@Model.ReportCount</strong> veces.</p>
+    }
+    else if (Model.ReportCount > 0)
+    {
+         <p>Este incidente ha sido reportado <strong>@Model.ReportCount</strong> veces.</p>
+    }
+</div>
+<hr />
+<p>
+    <a asp-action="Detect" class="btn btn-primary">Analizar Otro Mensaje</a>
+</p>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
