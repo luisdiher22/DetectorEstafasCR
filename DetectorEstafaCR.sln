@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DetectorEstafaCR", "DetectorEstafaCR\DetectorEstafaCR.csproj", "{AA1453DE-6448-4C90-8D3C-99FD02980AAD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AA1453DE-6448-4C90-8D3C-99FD02980AAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA1453DE-6448-4C90-8D3C-99FD02980AAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA1453DE-6448-4C90-8D3C-99FD02980AAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA1453DE-6448-4C90-8D3C-99FD02980AAD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8D8434B2-FD66-4483-88D8-C2B754B0B443}
+	EndGlobalSection
+EndGlobal
