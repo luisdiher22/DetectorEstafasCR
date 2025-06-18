@@ -1,10 +1,10 @@
 html {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 @media (min-width: 768px) {
   html {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 
@@ -19,4 +19,26 @@ html {
 
 body {
   margin-bottom: 60px;
+}
+
+/* Custom styles for info section */
+.info-section-custom ul li {
+    margin-bottom: 0.75rem;
+}
+
+.info-section-custom p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Custom styles for form clarity */
+.form-label-large {
+    font-size: 1.15rem; /* Larger font size for labels */
+    font-weight: 500;   /* Slightly bolder labels */
+}
+
+/* General styles for visual hierarchy */
+main[role="main"] {
+    padding-top: 1.5rem; /* Corresponds to Bootstrap's pt-4 */
+    padding-bottom: 1.5rem; /* Corresponds to Bootstrap's pb-4, overriding existing pb-3 */
 }
