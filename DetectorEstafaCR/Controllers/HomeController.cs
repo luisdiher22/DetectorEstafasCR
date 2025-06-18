@@ -28,16 +28,6 @@ namespace DetectorEstafaCR.Controllers
             _context = context; // Added
         }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
-
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
         // GET: /Home/Detect
         [HttpGet]
         public IActionResult Detect()
